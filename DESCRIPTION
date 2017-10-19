@@ -1,0 +1,12 @@
+Package: ucimlr
+Version: 0.0.0.9000
+Title: UCI Machine Learning Repository Unofficial Interface
+Description: Provides an easy-access interface to the UCI Machine Learning Repository to automate downloading, extraction, labelling, formatting, and NA handling.
+Authors@R: person("Aaron", "Cooley", email = "aaronsama@gmail.com", role = c("aut", "cre"))
+License: GPL
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Imports: 
+    readr,
+    downloader
