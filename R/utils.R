@@ -93,24 +93,10 @@ fix_nulls <- function(dataset,null_char=NULL)
   return(dataset)
 }
 
-remove_target_na <- function(data,target=NULL)
+remove_target_na <- function(dataset, target = NULL)
 {
-  dataset <- data$data
-  if(is.null(target)) {
-    if(is.null(data$properties$default_target))
-    {
-      data$properties$default_target <- tail(names(dataset),1)
-    }
-    target <- data$properties$default_target
-  } else {
-    data$properties$default_target <- target
-  }
-  if(!(target %in% names(dataset))) { stop("Error: target '",target,"' doesn't exist in dataset") }
-  if(target=="target") {
-    target_vector <- collect(select(dataset,target))[[1]]
-  } else {
-    target_vector <- collect(select(dataset,eval(as.symbol(target))))[[1]]
-  }
-  if(anyNA(target_vector)) { dataset <- dataset[-which(is.na(target_vector)),] }
-  return(list(data=dataset,properties=data$properties))
+  if (!(target %in% names(dataset))) { stop("Error: target '",target,"' doesn't exist in dataset") }
+  target_vector <- dataset[, which(names(dataset) == target)]
+  if(anyNA(target_vector)) { dataset <- dataset[-which(is.na(target_vector)), ] }
+  return(dataset)
 }

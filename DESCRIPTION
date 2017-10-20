@@ -9,4 +9,8 @@ LazyData: true
 ByteCompile: true
 Imports: 
     readr,
-    downloader
+    downloader,
+    tibble
+RoxygenNote: 6.0.1
+Suggests: 
+    mlr
