@@ -72,21 +72,21 @@ fix_names <- function(dataset)
   return(dataset)
 }
 
-fix_nulls <- function(dataset,null_char=NULL)
+fix_nulls <- function(dataset, null_char = NULL)
 {
-  if(!is.null(null_char))
+  if (!is.null(null_char))
   {
-    for(i in null_char)
+    for (i in null_char)
     {
-      dataset[dataset==i] <- NA
+      dataset[dataset == i] <- NA
     }
-    for(j in which(sapply(dataset,class)=="factor"))
+    for (j in which(sapply(dataset, class) == "factor"))
     {
-      vect <- collect(select(dataset,eval(as.symbol(names(dataset)[j]))))[[1]]
+      vect <- dataset[, j]
       vect_no_na <- vect[!is.na(vect)]
-      if(!anyNA(as.numeric(as.character(vect_no_na))))
+      if (!anyNA(as.numeric(as.character(vect_no_na))))
       {
-        dataset[,j] <- as.numeric(as.character(vect))
+        dataset[, j] <- as.numeric(as.character(vect))
       }
     }
   }
