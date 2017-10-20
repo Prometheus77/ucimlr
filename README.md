@@ -6,16 +6,22 @@ ucimlr's purpose is to make it easy to download and use data from UCI's machine 
 
 ## How to install
 To install from within R, run the following script:
+
 install.packages("devtools")
+
 library(devtools)
+
 install_github(repo="Prometheus77/ucimlr")
+
 library(ucimlr)
 
 ## How to use
 To see a list of available datasets, simply type:
+
 unlist(lapply(list_datasets(), FUN=function(x) x$short_name))
 
 To read in a dataset, simply type:
+
 ds <- read_ucimlr("adult") # will load the dataset "Adult" located at https://archive.ics.uci.edu/ml/machine-learning-databases/adult/
 
 ## How to help
