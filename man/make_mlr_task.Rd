@@ -8,6 +8,8 @@ make_mlr_task(data, ...)
 }
 \arguments{
 \item{data}{A data list as returned by \code{read_ucimlr} with option \code{read_as = 'list'}}
+
+\item{...}{Additional parameters to be passed to \code{mlr::makeRegrTask} or \code{mlr::makeClassifTask}}
 }
 \description{
 Creates an mlr task from a data list

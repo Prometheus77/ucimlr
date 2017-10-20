@@ -1,4 +1,4 @@
-#' Create a list containing dataset metadata
+#' Create a list containing metadata about available datasets
 #'
 #' @example
 #' ds_list <- list_datasets()

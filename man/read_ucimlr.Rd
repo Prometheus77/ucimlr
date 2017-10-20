@@ -4,7 +4,7 @@
 \alias{read_ucimlr}
 \title{Read a dataset from the UCI Machine Learning Repository into a data frame}
 \usage{
-read_ucimlr(dataset, col_names = TRUE, read_as = "list")
+read_ucimlr(dataset, col_names = TRUE, read_as = "df")
 }
 \arguments{
 \item{dataset}{The name of the dataset that you want to read}
