@@ -2,6 +2,8 @@
 #'
 #' @param data A data list as returned by \code{read_ucimlr} with option \code{read_as = 'list'}
 #' @param ... Additional parameters to be passed to \code{mlr::makeRegrTask} or \code{mlr::makeClassifTask}
+#'
+#' @export
 make_mlr_task <- function(data, ...)
 {
   if (!requireNamespace("mlr", quietly = TRUE))

@@ -3,6 +3,7 @@
 #' @example
 #' ds_list <- list_datasets()
 #'
+#' @export
 list_datasets <- function()
 {
   list(
