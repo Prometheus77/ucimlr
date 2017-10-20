@@ -74,10 +74,13 @@ read_ucimlr <- function(dataset, col_names = TRUE, read_as = "df")
     return(as.tbl(output))
   } else if (read_as == 'task')
   {
+    if(length(dl[[idx]]$default_target) == 0)
+    {
+      dl[[idx]]$default_target <- tail(names(output), 1)
+    }
     output <- remove_target_na(output, target = dl[[idx]]$default_target)
     return(make_mlr_task(list(data=output, properties = dl[[idx]])))
   } else if (read_as == 'list') {
     return(list(data = output, properties = dl[[idx]]))
   }
 }
-
