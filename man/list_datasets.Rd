@@ -2,10 +2,10 @@
 % Please edit documentation in R/list_datasets.R
 \name{list_datasets}
 \alias{list_datasets}
-\title{Create a list containing dataset metadata}
+\title{Create a list containing metadata about available datasets}
 \usage{
 list_datasets()
 }
 \description{
-Create a list containing dataset metadata
+Create a list containing metadata about available datasets
 }
