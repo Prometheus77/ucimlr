@@ -17,7 +17,7 @@
 read_ucimlr <- function(dataset, col_names = TRUE, read_as = "df")
 {
   # make sure everything is in order
-  assert_choice(read_as, c("df", "tbl", "task", "list"))
+  checkmate::assert_choice(read_as, c("df", "tbl", "task", "list"))
   if (!requireNamespace("mlr", quietly = TRUE) && read_as == "task")
   {
     stop("Package 'mlr' must be installed to read as task")

@@ -10,7 +10,8 @@ ByteCompile: true
 Imports: 
     readr,
     downloader,
-    tibble
+    tibble,
+    checkmate
 RoxygenNote: 6.0.1
 Suggests: 
     mlr
