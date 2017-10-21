@@ -37,6 +37,6 @@ list_datasets <- function()
     list(dataset_name="Relative location of CT slices on axial axis",short_name="ct",url="https://archive.ics.uci.edu/ml/machine-learning-databases/00206/",
          file="slice_localization_data.zip",zipfile="slice_localization_data.csv",delim="csv",col_names=TRUE,default_target=NULL,null_char=NULL,default_task="regr"),
     list(dataset_name="Appliances energy prediction",short_name="appliances",url="https://archive.ics.uci.edu/ml/machine-learning-databases/00374/",
-         file="energydata_complete.csv",zipfile=NULL,delim="csv",col_names=TRUE,default_target=NULL,null_char=NULL,default_task="regr")
+         file="energydata_complete.csv",zipfile=NULL,delim="csv",col_names=TRUE,default_target="Appliances",null_char=NULL,default_task="regr")
   )
 }
