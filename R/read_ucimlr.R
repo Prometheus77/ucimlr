@@ -41,7 +41,7 @@ read_ucimlr <- function(dataset, col_names = TRUE, read_as = "df")
   {
     if (length(dl[[idx]]$col_names) != ncol(output))
     {
-      stop("Error: length of col_names doesn't match number of columns of dataset '", dl[[idx]]$short_name, "'")
+      stop("Error: length of col_names (",length(dl[[idx]]$col_names),") doesn't match number of columns of dataset '", dl[[idx]]$short_name, "' (",ncol(output),")")
     } else {
       names(output) <- dl[[idx]]$col_names
     }
@@ -54,11 +54,6 @@ read_ucimlr <- function(dataset, col_names = TRUE, read_as = "df")
 
   output <- fix_names(output)
   output <- fix_nulls(output, dl[[idx]]$null_char)
-
-  if (exists("exclude_cols", where=dl[[idx]]))
-  {
-    output <- output[, -which(names(output) %in% dl[[idx]]$exclude_cols)]
-  }
 
   if (col_names == FALSE)
   {
@@ -79,6 +74,10 @@ read_ucimlr <- function(dataset, col_names = TRUE, read_as = "df")
       dl[[idx]]$default_target <- tail(names(output), 1)
     }
     output <- remove_target_na(output, target = dl[[idx]]$default_target)
+    if (exists("exclude_cols", where=dl[[idx]]))
+    {
+      output <- output[, -which(names(output) %in% dl[[idx]]$exclude_cols)]
+    }
     return(make_mlr_task(list(data=output, properties = dl[[idx]])))
   } else if (read_as == 'list') {
     return(list(data = output, properties = dl[[idx]]))
