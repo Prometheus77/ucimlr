@@ -134,7 +134,7 @@ list_datasets <- function()
          null_char = NULL,
          default_task = "regr"),
     list(dataset_name = "Statlog (German Credit Data)",
-         short_name = "statlog",
+         short_name = "german",
          url = "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/",
          file = "german.data",
          zipfile = NULL,
