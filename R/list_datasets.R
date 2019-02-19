@@ -146,6 +146,16 @@ list_datasets <- function()
                        "Number_of_dependents", "Telephone", "Foreign_worker", "Performance"),
          default_target = "Performance",
          null_char = NULL,
+         default_task = "classif"),
+    list(dataset_name = "Statlog (Australian Credit Approval)",
+         short_name = "australian",
+         url = "http://archive.ics.uci.edu/ml/machine-learning-databases/statlog/australian/",
+         file = "australian.dat",
+         zipfile = NULL,
+         delim = " ",
+         col_names = c("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15"),
+         default_target = "A15",
+         null_char = NULL,
          default_task = "classif")
   )
 }
